@@ -1,0 +1,10 @@
+.table__wrapper {
+	display: flex;
+	flex-direction: column;
+	row-gap: 30px;
+	/* border: 1px solid lime; */
+}
+
+thead.table__header {
+	background: #000;
+}

@@ -1,0 +1,11 @@
+header {
+	background: #fff;
+	color: #000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+h2 {
+	text-align: left;
+}
