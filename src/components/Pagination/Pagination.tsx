@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react';
 import PaginationButton from './PaginationButton/PaginationButton';
 import './Pagination.css';
 
-interface PaginationProps {
+export interface PaginationProps {
 	actualPageIdx: number;
 	lastPageIdx: number;
 	goToPage: (n: number) => void;
@@ -12,7 +12,7 @@ interface PaginationProps {
 	goToLastPage: (n: number) => void;
 }
 
-const Pagination: FunctionComponent<PaginationProps> = ({
+export const Pagination: FunctionComponent<PaginationProps> = ({
 	actualPageIdx,
 	lastPageIdx,
 	goToPage,
@@ -72,4 +72,4 @@ const Pagination: FunctionComponent<PaginationProps> = ({
 	);
 };
 
-export default Pagination;
+// export default Pagination;

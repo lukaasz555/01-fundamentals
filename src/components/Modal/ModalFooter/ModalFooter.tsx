@@ -1,4 +1,3 @@
-import { FunctionComponent } from 'react';
 import './ModalFooter.css';
 
 interface ModalFooterProps {
@@ -10,10 +9,7 @@ interface ModalFooterProps {
 // oba przyciski mają zamykać modal,
 // podczas kliknięcia w przycisk z tekstem callToActionLabel, dodatkowo ma wyskakiwać alert z tekstem "OK"
 
-const ModalFooter: FunctionComponent<ModalFooterProps> = ({
-	callToActionLabel,
-	toggleModal,
-}: ModalFooterProps) => {
+const ModalFooter = ({ callToActionLabel, toggleModal }: ModalFooterProps) => {
 	function handleCtaClick(): void {
 		alert('OK');
 		toggleModal();

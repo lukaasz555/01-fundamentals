@@ -24,23 +24,25 @@ const Modal: FunctionComponent<ModalProps> = ({
 		}
 	}
 
-	if (!isOpen) return;
+	// if (!isOpen) return;
 
 	return (
-		<div className='modal__overlay' onClick={(e) => closeOnClickOutside(e)}>
-			<div className='modal__wrapper'>
-				<ModalHeader title='modal text test' toggleModal={toggle} />
-				<ModalContent>
-					<div className='first-modal'>
-						<h4>content - subtitle</h4>
-						{[1, 2, 3].map((x) => (
-							<div key={x}>content {x}</div>
-						))}
-					</div>
-				</ModalContent>
-				<ModalFooter callToActionLabel={'Udało się'} toggleModal={toggle} />
+		!!isOpen && (
+			<div className='modal__overlay' onClick={(e) => closeOnClickOutside(e)}>
+				<div className='modal__wrapper'>
+					<ModalHeader title='modal text test' toggleModal={toggle} />
+					<ModalContent>
+						<div className='first-modal'>
+							<h4>content - subtitle</h4>
+							{[1, 2, 3].map((x) => (
+								<div key={x}>content {x}</div>
+							))}
+						</div>
+					</ModalContent>
+					<ModalFooter callToActionLabel={'Udało się'} toggleModal={toggle} />
+				</div>
 			</div>
-		</div>
+		)
 	);
 };
 
