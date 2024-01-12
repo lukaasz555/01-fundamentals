@@ -1,0 +1,32 @@
+.char__container {
+	/* width: 50px;
+	height: 140px; */
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	box-sizing: border-box;
+}
+
+.char__container input {
+	display: block;
+	height: 60px;
+	width: 40px;
+	text-align: center;
+	font-size: 18px;
+	background: white;
+	color: #000;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	margin: 2px;
+	box-sizing: inherit;
+}
+
+.char__container input:disabled {
+	background: gray;
+	border: none;
+}
+
+.char__container--label {
+	text-align: center;
+	font-size: 14px;
+}
