@@ -1,4 +1,3 @@
-import { FunctionComponent } from 'react';
 import PaginationButton from './PaginationButton/PaginationButton';
 import './Pagination.css';
 
@@ -12,7 +11,7 @@ export interface PaginationProps {
 	goToLastPage: (n: number) => void;
 }
 
-export const Pagination: FunctionComponent<PaginationProps> = ({
+export const Pagination = ({
 	actualPageIdx,
 	lastPageIdx,
 	goToPage,
@@ -20,7 +19,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
 	goToPrevPage,
 	goToNextPage,
 	goToLastPage,
-}) => {
+}: PaginationProps) => {
 	const buttonsWithNumbers: JSX.Element[] = [];
 	for (let i = 0; i <= lastPageIdx; i++) {
 		buttonsWithNumbers.push(
@@ -71,5 +70,3 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
 		</div>
 	);
 };
-
-// export default Pagination;

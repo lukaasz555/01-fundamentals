@@ -1,23 +1,22 @@
-import { FunctionComponent } from 'react';
-import Login from './Login';
+import { useEffect } from 'react';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 
 const VALID_TOKEN = 'f3823903b2dd6e35243b1bbe5a14f651';
 
-function useAuth(): boolean {
-	const urlSearchParams = new URLSearchParams(window.location.search);
-	const token = urlSearchParams.get('token');
-
-	if (!token) return false;
-	if (token === VALID_TOKEN) return true;
-	return false;
-}
+const useAuth = (): boolean => {
+	const [searchParams, setSearchParams] = useSearchParams();
+	const token = searchParams.get('token');
+	return token === VALID_TOKEN;
+};
 
 interface SecuredProps {}
 
-const Secured: FunctionComponent<SecuredProps> = () => {
+export const Secured = ({}: SecuredProps) => {
 	const isAuth = useAuth();
-	if (!isAuth) return <Login />;
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		if (!isAuth) return navigate('/login');
+	}, []);
 	return <h1>Secured</h1>;
 };
-
-export default Secured;
