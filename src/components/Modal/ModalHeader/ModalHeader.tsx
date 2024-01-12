@@ -1,4 +1,3 @@
-import { FunctionComponent } from 'react';
 import './ModalHeader.css';
 
 interface ModalHeaderProps {
@@ -6,10 +5,7 @@ interface ModalHeaderProps {
 	toggleModal: () => void;
 }
 
-const ModalHeader: FunctionComponent<ModalHeaderProps> = ({
-	title,
-	toggleModal,
-}: ModalHeaderProps) => {
+export const ModalHeader = ({ title, toggleModal }: ModalHeaderProps) => {
 	return (
 		<header>
 			<h3>{title}</h3>
@@ -17,5 +13,3 @@ const ModalHeader: FunctionComponent<ModalHeaderProps> = ({
 		</header>
 	);
 };
-
-export default ModalHeader;

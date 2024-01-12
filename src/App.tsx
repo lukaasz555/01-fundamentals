@@ -1,16 +1,15 @@
-import { FunctionComponent, useState } from 'react';
+import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './views/Home';
+import { Home } from './views/Home';
 import { Login } from './views/Login';
 import { Secured } from './views/Secured';
 import { Table } from './views/Table';
-import Modal from './components/Modal/Modal';
+import { Modal } from './components/Modal/Modal';
 import { ModalContext } from './context/ModalContext';
+import { Input } from './views/Input';
 import './App.css';
 
-interface IAppProps {}
-
-const App: FunctionComponent<IAppProps> = () => {
+const App = () => {
 	const [isModalOpen, setModalOpen] = useState(false);
 
 	return (
@@ -21,6 +20,7 @@ const App: FunctionComponent<IAppProps> = () => {
 					<Route path='/login' element={<Login />} />
 					<Route path='/secure-link' element={<Secured />} />
 					<Route path='/table' element={<Table />} />
+					<Route path='/input' element={<Input />} />
 				</Routes>
 				<Modal isOpen={isModalOpen} setModalOpen={setModalOpen} />
 			</ModalContext.Provider>

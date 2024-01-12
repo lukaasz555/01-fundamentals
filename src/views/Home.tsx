@@ -1,9 +1,8 @@
-import { FunctionComponent } from 'react';
 import { useModalContext } from '../context/ModalContext';
 
 interface HomeProps {}
 
-const Home: FunctionComponent<HomeProps> = () => {
+export const Home = ({}: HomeProps) => {
 	const { isModalOpen, setModalOpen } = useModalContext();
 
 	function showModal(): void {
@@ -17,5 +16,3 @@ const Home: FunctionComponent<HomeProps> = () => {
 		</div>
 	);
 };
-
-export default Home;

@@ -5,11 +5,10 @@ interface ModalFooterProps {
 	toggleModal: () => void;
 }
 
-// dwa przyciski po prawej stronie, z ktorego jeden to cancel a drugi to {callToActionLabel}
-// oba przyciski mają zamykać modal,
-// podczas kliknięcia w przycisk z tekstem callToActionLabel, dodatkowo ma wyskakiwać alert z tekstem "OK"
-
-const ModalFooter = ({ callToActionLabel, toggleModal }: ModalFooterProps) => {
+export const ModalFooter = ({
+	callToActionLabel,
+	toggleModal,
+}: ModalFooterProps) => {
 	function handleCtaClick(): void {
 		alert('OK');
 		toggleModal();
@@ -24,5 +23,3 @@ const ModalFooter = ({ callToActionLabel, toggleModal }: ModalFooterProps) => {
 		</footer>
 	);
 };
-
-export default ModalFooter;
