@@ -8,6 +8,7 @@ import { Modal } from './components/Modal/Modal';
 import { ModalContext } from './context/ModalContext';
 import { Input } from './views/Input';
 import './App.css';
+import { Observer } from './views/Observer';
 
 const App = () => {
 	const [isModalOpen, setModalOpen] = useState(false);
@@ -21,6 +22,7 @@ const App = () => {
 					<Route path='/secure-link' element={<Secured />} />
 					<Route path='/table' element={<Table />} />
 					<Route path='/input' element={<Input />} />
+					<Route path='/observer' element={<Observer />} />
 				</Routes>
 				<Modal isOpen={isModalOpen} setModalOpen={setModalOpen} />
 			</ModalContext.Provider>
