@@ -9,7 +9,7 @@ interface PasswordInputProps {
 }
 
 export class CharItem {
-	value: string;
+	readonly value: string;
 	isValid = false;
 	isDisabled = true;
 	inputValue = '';
@@ -22,10 +22,6 @@ export class CharItem {
 
 	setInputValue(inputValue: string) {
 		this.inputValue = inputValue;
-		this.v$();
-	}
-
-	v$() {
 		if (this.inputValue === this.value) {
 			this.isValid = true;
 		} else this.isValid = false;
