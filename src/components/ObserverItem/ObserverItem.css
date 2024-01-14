@@ -1,0 +1,19 @@
+.item__container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2em;
+	font-weight: 500;
+	height: 400px;
+	width: 400px;
+	border-radius: 12px;
+	opacity: 0;
+	transform: translateX(-100%);
+	transform-origin: left;
+	transition: transform 0.5s, opacity 0.75s;
+}
+
+.item__container.active {
+	opacity: 1;
+	transform: translateX(0);
+}
